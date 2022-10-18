@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+    function Person(name){
+      this.name = name;
+    }
+    let p = new Person("Rose");
+    console.log(p.toString()); // 調用 Object.prototype.toString().call(p): return [object Object]
+
+    //  如果不想要調用 Object 的 方法，則可以自行撰寫 toString()。
+    // 方法1 :
+    Person.prototype.toString = function (){
+      return ("[name = " + this.name + " ]");
+    }
+    console.log(p.toString()); // 調用 Person.prototype.toString : return [name = Rose]
+    console.log(p.__proto__.hasOwnProperty("toString")); // true
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

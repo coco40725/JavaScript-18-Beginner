@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+    /*
+    *  explicit prototype property (顯示原型) prototype 與  implicit prototype (隱式原型) __proto__
+    *  1. 我們每創建一個 function 時，系統會同時創建一個屬性:  "prototype"，這個屬性對應的對象稱為 "原型對象"
+    *  2. 若funciton是作為一般的funciton，則調用 prototype 沒有甚麼特別作用；
+          但若是作為 constructor，其創建的對象中皆含有內置屬性 __proto__，可以用於訪問 constructor's prototype。
+          * Every object created by a constructor has an implicit reference (called the object’s prototype)
+          * to the value of its constructor’s “prototype” ----ECMAScript Language Specification
+
+    *  2. property 相當於是一個公共區域，可以定義method與屬性等等，所有同一個類的 instance皆可以訪問到期對應的 prototype。
+    *  3. 當我們訪問對象的某狗屬性或方法時，系統會先找其自身是否有該屬性方法，
+          若沒有，則會去找這個class的 prototype 是否有包含這個屬性與方法，
+          若prototype還是沒有，則會去找 prototype 的 prototype， 不斷往上找，
+          直到找到 Object prototype (Object 的 prototype 沒有 原型)， 若連這個也沒有，則回傳 undefined。
+    *  4. 如果有共用的 "屬性值與方法"，可以統一添加到prototype
+    *  5. 使用 in 時檢查對象是否含有特定屬性時，若本身沒有但prototype有，依然會返回true
+    *  6. 可以使用 hasOwnProperty() 來檢查自身是否含有此屬性
+    * */
+    function MyClass(name){
+      this.name = name;
+    }
+    MyClass.prototype.Country = "Taiwan";
+    MyClass.prototype.sayHi = function (){
+      alert("你好! 我是" + this.name);
+    }
+
+    let p1 = new MyClass("Mary");
+    let p2 = new MyClass("Lily");
+    var p3 = new MyClass("dd");
+    p1.sayHi();
+    p2.sayHi();
+
+
+    alert("Country" in p1);
+    alert(p1.hasOwnProperty("Country"));
+
+    console.log(p1.__proto__ === MyClass.prototype); // true
+    console.log(p1.__proto__.__proto__=== Object.prototype); // true
+    console.log(p1.__proto__.__proto__.__proto__ === Object.prototype); // false，因為在上去就沒東西了
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

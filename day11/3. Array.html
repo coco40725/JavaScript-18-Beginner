@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+    // Array
+    // 寫法 1: new Array()
+    let arr = new Array(10);
+    arr[0] = "大家好";
+    arr[1] = 123;
+    arr[3] = true;
+    console.log(arr[2]); // 若是沒有定義的，會回傳 undefined，不會報錯
+    arr[11] = 12;
+    console.log(arr[11]);
+
+    // 寫法 2: []
+    let arr1 = [2,"dog",true];
+    let arr2 = [[1,2,22],[2,3],["abc"]];
+
+    // JS 的 Array 可以中途修改長度:
+    // 1. 若新長度 低於 原本的長度，則會砍掉多餘的 (從後面開始砍)
+    // 2. 若新長度 高於 原本的長度，則直接新增空白欄位 (從後面開始加)
+    arr.length = 5;
+
+
+    // 不斷添加值
+    arr[arr.length] = 13;
+    arr[arr.length] = 89;
+
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+    function Person(name, age){
+      this.name = name;
+      this.age = age;
+    }
+
+    let p1 = new Person("Jerry",12);
+    let p2 = new Person("Peggy",65);
+    let p3 = new Person("Allen",36);
+    let p4 = new Person("Tim",10);
+    let p5 = new Person("Wendy",42);
+
+    let arrP = [p1, p2, p3, p4, p5];
+
+    /*
+    * 修改 Person toString()
+    * */
+    Person.prototype.toString = function (){
+        return "[name: " + this.name + "; age: " + this.age + "]";
+    }
+
+    /*
+    * 創建一個函數，可以將perArr中的滿18歲的Person提取出來
+    * 然後封裝到一個新的數組中並返回
+    * */
+    function collectArray(arr){
+        if (arr instanceof Array){
+            let arrP_new = new Array();
+            for (let i = 0 ; i < arrP.length ; i++){
+                if (arr[i].age >= 18) {
+                    arrP_new.push(arr[i]);
+                }
+            }
+            return arrP_new;
+        }else{
+            return null;
+        }
+    }
+
+    /*
+    * 遍歷結果
+    * */
+    let arrP1 = collectArray(arrP);
+    for(let i = 0; i < arrP1.length; i++){
+        console.log(arrP1[i]);
+    }
+
+
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

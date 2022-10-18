@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+      let arr = ["Red","Dog","Apple"];
+
+      // 1. push(element1, element2, ...) : 新增數據至末尾
+      arr.push("Bill",123, true);
+      console.log(arr);
+
+      // 2. unshift(element1, element2, ...) return length: 添加 element至最前面，並返回最新長度
+      let new_length = arr.unshift("Queen",false,123.98);
+      alert(new_length);
+
+      // 3. pop() return element : 移除數組中最末尾的element，並返回該元素
+      let arrLast = arr.pop();
+      alert(arrLast);
+
+      // 4. shift(element1, element2, ...) return element: 移除數組中的第一個element，並返回該元素
+      let arrFirst = arr.shift();
+      console.log(arrFirst);
+
+      // 5. 遍歷數組中的元素
+      for (let e in arr){
+          //  Iterate over numeric indexes  !!
+          console.log(e);
+      }
+
+      for (let e = 0; e < arr.length; e++){
+          console.log(arr[e]);
+      }
+
+      // 6. slice(start, end) return subset of Array: 擷取特定範圍的elements， 範圍: [start, end)
+      console.log(arr.slice(1,4));
+
+      // 7. splice(start, end) return subset of Array: 刪除特定範圍的elements， 範圍: [start, end)
+      console.log(arr.splice(0,1));
+
+      // 8. concat(array1, array2, element,...) return Array: 連接多個array或 element
+      let arr1 = arr.concat(arr,"123");
+
+      // 9. join(splitString) return String : 將 Array 的元素轉換成 String 並以 splitString 進行連接
+      console.log(arr.join("@@-@@"))
+
+      // 10. reverse(): 反轉Array，會直接修改到原 Array
+      console.log(arr.reverse());
+
+      // 11. sort(): 排序，會直接修改到原 Array，按照 Unicode進行排序
+      console.log(arr.sort());
+      // 我們可以自行定義 function 來 sort Array
+      let num1 = [1,3,4,0];
+      num1.sort(function (a,b){
+          // 完整語法 與 寫法:
+          // a 在 b的前面:
+          // 如果返回一個大於0的值，則a, b元素會交換位置
+          // 如果返回一個小於0的值，則a, b元素位置不變
+          // 如果返回一個0，則認為兩個元素相等，也不交換位置
+          // 跟 Java 比是反過來的， a > b 則回傳 負數; a < b 則回傳 正數
+          /*
+             if(a > b){
+                return -1;
+            }else if(a < b){
+                return 1;
+            }else{
+               return 0;
+            }
+		*/
+          // 簡易的寫法: 升序排列
+          return a - b;
+
+          // 簡易的寫法: 降序排列
+          return b - a;
+
+      })
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

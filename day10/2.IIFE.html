@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+      // Function Expression
+      function Myfun(){
+          alert("這是一般的函數");
+      }
+      Myfun();
+
+      // Immediately Invoked Functions Expressions (IIFE): 函數定義完，立即被調用。
+      (function Myfun1(value){
+          alert("這是IIFE" + value);
+      })("喔喔喔喔喔@@@加入數值!!");
+
+
+      // 匿名函數
+      (function (value){
+          alert("這是匿名函數!!");
+          alert(value);
+      })("大家好，這是輸入值!!!")
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

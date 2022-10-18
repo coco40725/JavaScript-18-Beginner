@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+    // Method 1: Object literal
+    let p = {
+      name: "Gary",
+      age: 24
+    }
+
+    // Method 2: new Object
+    let p1 = new Object({
+      name: "Lliy",
+      age: 47
+    });
+    alert("name: " + p1.name + "; age: " + p1.age);
+
+
+       // 不推薦以下的方法創建對象，因為都是用 new Object() 會導致無法區別不同對象
+    function createPerson(name, age){
+      let obj = new Object({
+          name: name,
+          age: age
+      });
+      return obj;
+    }
+    let p11 = createPerson("Jerry", 45);
+    alert("name: " + p11.name + "; age: " + p11.age);
+
+    // Method 3: Constructor
+    function Person(name, age){
+      this.name = name;
+      this.age = age;
+    }
+    let p2 = new Person("Mary",14);
+    alert("name: " + p2.name + "; age: " + p2.age);
+
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

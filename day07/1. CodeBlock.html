@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+    /*
+    * JS 的 code block 是用於分群，沒有其他功能，
+    * 1. code block 寫完不用加";"
+    * 2. code block 裡面定義的變數 外面可以看到
+    * 3. code block 裡面的程式要嘛全部執行，要嘛不執行
+    * */
+    {
+      alert("早安");
+      document.write("good morning");
+      console.log("hello!");
+    }
+    ff: for (var i=0; i<12;i++){
+      for (var j = 1; j < 3; j++){
+        alert("j = " + j);
+        if (j == 1) break ff;
+      }
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>

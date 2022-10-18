@@ -1,0 +1,31 @@
+<!--
+javaScript 加載方式
+方式1. 寫在 HTML tag 屬性裡面，但不推薦
+方式2. 寫在 <head> 中，並以 <style></style> 包覆
+方式3. 外部加入: 使用 <script type="text/javascript" src="js路徑"></script> ， 較推薦，
+不過需要注意的是，一旦<script> 用於加入外部 js後，便不可以再往裡面寫js code，即使編寫 瀏覽器也會忽略
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- 方式3.   -->
+    <script type="text/javascript" src="hello.js"></script>
+
+  <script>
+    <!-- 方式2.   -->
+    alert("餓死了!!!");
+  </script>
+
+</head>
+<body>
+
+<!--  方式1.-->
+  <button onclick="alert('我想吃清燉豬腳!')">點我 我好餓!</button>
+  <a href="javascript:alert('真的快餓死!')">晚餐?</a>
+
+</body>
+</html>

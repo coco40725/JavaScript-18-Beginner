@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+    // 1. 定義一個函數，判斷一個數字是否是偶數，如果是返回true，否則返回false
+    function checkNumber(num){
+      return num % 2 === 0;
+    }
+    let a = checkNumber(9);
+    console.log(a);
+
+    // 2. 定義一個函數，可以根據半徑計算一個圓的面積，並返回計算結果
+    function circleCal(radius){
+      return radius*radius*Math.PI
+    }
+    let area  = circleCal(3);
+    console.log(area);
+
+    // 3. 創建一個函數，可以在控制台中輸出一個人的信息
+    function showInfo(obj){
+      console.log("名字: " + obj.name + "年齡: " + obj.age + " 喜歡的食物: " + obj.food)
+    }
+    let obb = {
+        name: "小美",
+        age: 35,
+        food: "水蜜桃"
+    };
+    showInfo(obb);
+
+    // 4.
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
