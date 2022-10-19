@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+    // 1.  charAt(): 可以返回字符串中的指定位置的字符
+    let word = new String("HelloWorld");
+    console.log(word.charAt(0));
+    console.log(word.charAt(1));
+
+    // 2. charCodeAt(): 返回特定位置的字符其 Unicode
+    console.log(word.charCodeAt(0));
+
+    // 3. String.formCharCode(): 可以根據字符編碼去獲取字符
+    console.log(String.fromCharCode(0x2692));
+
+    // 4. concat(str2, str3): 將str進行串聯
+    let wordNew = word.concat("_GG", 123, true);
+    console.log(wordNew);
+
+    // 5. indexof(target, startIndex): 從 strat開始 "往右" 找，返回第一次出現的index
+    let w_index = word.indexOf("o",5);
+    console.log(w_index);
+
+    // 6. lastIndexOf(target, startIndex): 從 strat開始 "往左" 找，返回第一次出現的index
+    let w_index1 = word.lastIndexOf("o",5);
+    console.log(w_index1);
+
+    // 7. substring(start, end): 從 String 擷取指定範圍的string, 範圍: [start, end)
+    console.log(word.substring(0,2));
+
+    // 8. substr(start, length): 從 String 擷取指定範圍的string, 範圍: [start, end)
+    console.log(word.substr(1,7));
+
+    // 9. split(str_split): 將 String 進行拆解成 array，根據str_split來拆
+    let word1 = String("abc_bvd_pok_ddd");
+    let arr =  word1.split("_");
+   for(let i = 0;  i < arr.length; i++){
+       console.log(arr[i]);
+   }
+
+
+   // 10. toUpperCase(): 轉換成大寫
+    console.log(word1.toUpperCase());
+
+   // 11. toLowerCase(): 轉換成小寫
+    let word2 = String("AAA_DDSJ_JDKKDJ");
+    console.log(word2.toUpperCase());
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

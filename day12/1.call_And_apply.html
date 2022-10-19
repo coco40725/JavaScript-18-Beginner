@@ -4,6 +4,29 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
+       /*
+       * 1. 在調用 call() 和 apply() 可以將一個對象指定為第一個參數，此時這個對象將會成為函數執行時的this
+       * - call(Object, arg1, arg2, ...): 將實參在對象之後依次傳遞
+       * - apply(Object, [arg1, arg2, arg3,...]): 將實參封裝到一個數組中統一傳遞
+       * */
+
+       function showInfo(word, food){
+           console.log("my name is: " + this.name + "; 說: " + word + "; 食物: " + food);
+       }
+
+       const person = {
+           name: "人類"
+       }
+
+       const dog = {
+           name: "狗"
+       }
+
+       showInfo.call(person, "大家好", "蛋糕");
+       showInfo.call(dog, "woof", "狗食");
+
+       showInfo.apply(person, ["大家好", "蛋糕"]);
+       showInfo.apply(dog, ["woof", "狗食"]);
 
     </script>
 </head>

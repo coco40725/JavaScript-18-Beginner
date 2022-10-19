@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+      let reg1 = new RegExp("[d9]");
+      let reg2 = /[A-Za-z0-9]/;
+      const word = String("abc3d499%%$$dkd");
+      const word2 = String(":::::");
+
+      let arr = word.split(reg1);
+      console.log(arr.length);
+      for (let i = 0; i < arr.length; i++){
+        console.log(arr[i]);
+      }
+
+      // search(regex) return int: 搜尋 String 中是否有特定格式(正則)的文字，若有則回傳第一次找到的index，若找不到則回傳 -1
+      let str = "hello abc hello aec afc";
+      let result = str.search(/a[bef]c/); // 找是否有 abc, aec, 或 afc
+      console.log(result);
+
+      // match(regex) return string: 將符合的內容返回，僅返回第一筆
+      let result1 = str.match(/a[bef]c/);
+      console.log(result1);
+
+      // replace(欲替換的格式, 新格式) return string:
+      let str1 = str.replace(/a[bef]c/,"你好");
+      console.log(str1);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
