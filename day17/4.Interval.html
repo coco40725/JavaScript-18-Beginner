@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+      window.onload = function (){
+          let count = document.getElementById("count");
+          let index = 1;
+          /*
+            JS的程序的執行速度是非常非常快的， 以下的回全基本上是瞬間完成，你看不到數字跳動
+            如果希望一段程序，可以每間隔一段時間執行一次，可以使用定時調用，例如: setInterval()。
+          for (let i = 1; i < 10000; i++){
+              count.innerText = i;
+          }
+         */
+
+          /*
+          * setInterval(fun, time): 設定每多少毫秒 執行一次fun
+          * */
+          function showNum(){
+              index++;
+             count.innerText = index;
+             if (index === 10) clearInterval(timer); // 關閉定時器
+          }
+          let timer = setInterval(showNum, 100);
+
+      }
+
+    </script>
+</head>
+<body>
+    <h1 id="count"></h1>
+</body>
+</html>

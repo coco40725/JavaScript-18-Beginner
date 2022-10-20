@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">按鈕按鈕，按按看!!</button>
+</body>
+
+<script>
+  let content = document.getElementById("btn");
+  content.onclick = function (){
+    alert("你按下去了喔!!!");
+  };
+
+  content.onmouseover = function (){
+    content.style.color = "red";
+  }
+
+  content.onmouseout = function (){
+    content.style.color = "black";
+  }
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+    /*
+    * History: 可以操控瀏覽器 往前 或  往後
+    * */
+    window.onload = function(){
+      let content = document.getElementById("btn");
+
+      content.onclick = function (){
+        // 1. history.length: 紀錄當前session 有多少的 history
+        alert(history.length);
+
+        // 2. history.forward(): 相當於 瀏覽器的往前按紐
+        // history.forward();
+
+        // 3. history.back(): 相當於 瀏覽器的往後按鈕
+        // history.back();
+
+        // 4. go(整數): 可以用來跳轉到指定的頁面
+       //  n = 1: 表示向前跳轉一個頁面 相當於forward()
+       //  n = 2: 表示向前跳轉兩個頁面
+       //  n = -1: 表示向後跳轉一個頁面
+       //  n = -2: 表示向後跳轉兩個頁面
+        history.go(2);
+      };
+
+    }
+
+  </script>
+</head>
+<body>
+  <h1>History</h1>
+  <button id="btn"> 按按看 </button>
+  <div>
+    <a href="1.BOM.html"> 去 BOM </a>
+  </div>
+</body>
+</html>

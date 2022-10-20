@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+    /*
+    * 自動 切換圖片，並且設計 按鈕可以暫停 與 繼續
+    * */
+    window.onload = function (){
+        let figContent = document.getElementById("fig");
+        let imgContent = document.getElementById("img1");
+        let stopContent = document.getElementById("stop");
+        let conContent = document.getElementById("continue");
+
+        let index = 1;
+        // 如果可以用 node.js
+        // const fs = require('fs');
+        // const dir = fs.readdirSync("./img/").length;
+
+        function changeImage(){
+            let newSrc = "./img/" + index + ".jpg";
+            imgContent.setAttribute("src",newSrc);
+            index++;
+            if (index > 6) index = 1;
+        }
+
+        function clickStop(){
+            console.log("stop!");
+            clearInterval(timer);
+        }
+
+        function clickContinue(){
+            console.log("continue!");
+            timer = setInterval(changeImage, 600);
+        }
+
+
+        let timer = setInterval(changeImage, 600);
+        stopContent.onclick = clickStop;
+        conContent.onclick = clickContinue;
+    }
+
+  </script>
+</head>
+<body>
+<figure id="fig">
+    <img id="img1" src="img/1.jpg" width=225 height="225">
+</figure>
+<button id="stop"> 暫停 </button>
+<button id="continue"> 繼續 </button>
+</body>
+</html>

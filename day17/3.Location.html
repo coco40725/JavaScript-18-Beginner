@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+    /*
+    * Location:
+    * 封裝了瀏覽器的地址欄訊息
+    * */
+    window.onload = function(){
+
+      //獲取按鈕對象
+      var btn = document.getElementById("btn");
+
+      btn.onclick = function(){
+
+        //如果直接打印location，則可以獲取到地址欄的信息（當前頁面的完整路徑）
+        //alert(location);
+
+        /*
+         * 如果直接將location屬性修改為一個完整的路徑，或相對路徑
+         * 	則我們頁面會自動跳轉到該路徑，並且會生成相應的歷史記錄
+         */
+        // location = "https://tw.yahoo.com/";
+        //location = "01.BOM.html";
+
+        /*
+         * assign()
+         * 	- 用來跳轉到其他的頁面，作用和直接修改location一樣
+         */
+        //location.assign("https://tw.yahoo.com/");
+
+        /*
+         * reload()
+         * 	- 用於重新加載當前頁面，作用和刷新按鈕一樣
+         * 	- 如果在方法中傳遞一個true，作為參數，則會強制清空緩存刷新頁面
+         */
+        //location.reload(true);
+
+        /*
+         * replace()
+         * 	- 可以使用一個新的頁面替換當前頁面，調用完畢也會跳轉頁面
+         * 		不會生成歷史記錄，不能使用回退按鈕回退!!!
+         */
+        location.replace("https://tw.yahoo.com/");
+
+      };
+
+    };
+
+  </script>
+</head>
+<body>
+  <button id="btn">點我一下</button>
+   <div>
+     <a href="1.BOM.html"></a>
+   </div>
+</body>
+</html>

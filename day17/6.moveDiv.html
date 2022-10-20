@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    #box1{
+      width: 100px;
+      height: 100px;
+      background-color: green;
+      position: absolute;
+    }
+  </style>
+  <script>
+    window.onload = function (){
+      let boxContent = document.getElementById("box1");
+      let speed = 10;
+
+      // 1. onkeydown: The keydown event fires when the user presses a keyboard key.
+      // 2. offsetTop / offsetLeft : read-only, 距離上面多少px / 距離左邊多少px
+      // 3. style.left / style.top:
+      //    - absolute: the left/top property specifies the distance between the element's outer margin of top edge and
+      //                the inner border of the top edge of its containing block.
+      //    - relative: the left/top property specifies the distance the element's top edge is moved below its normal position.
+
+      document.onkeydown = function (event){
+        switch (event.key){
+          case "ArrowUp":
+            boxContent.style.top = boxContent.offsetTop - speed + "px";
+            break;
+          case "ArrowRight":
+            boxContent.style.left = boxContent.offsetLeft + speed + "px";
+            break;
+          case "ArrowDown":
+            boxContent.style.top = boxContent.offsetTop + speed + "px";
+            break;
+          case "ArrowLeft":
+            boxContent.style.left = boxContent.offsetLeft - speed + "px";
+            break;
+        }
+      }
+
+
+    }
+  </script>
+
+</head>
+<body>
+  <div id="box1"></div>
+</body>
+</html>

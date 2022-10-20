@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+      let ua = navigator.userAgent;
+      if (/firefox/i.test(ua)){
+          alert("你正在用 firefox");
+      }else if (/edg/i.test(ua)){
+          alert("你正在用 Edge");
+      }else if(/msie/i.test(ua)){
+          alert("你正在用 IE");
+      }else if (/chrome/i.test(ua)){
+          alert("你是使用 Chrome");
+      }else if (ActiveXObject in window){
+          // 如果通過UserAgent不能判斷，還可以通過一些瀏覽器中特有的對象，來判斷瀏覽器的信息，比如：ActiveXObject
+          alert("你是使用 IE11");
+      }
+  </script>
+</head>
+<body>
+
+</body>
+</html>

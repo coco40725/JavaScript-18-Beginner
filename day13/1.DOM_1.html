@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 為何以下的script content 與 外部 script 會是 null呢 ?
+    因為瀏覽器加載頁面時，會從上到下執行，而當遇到 <script> 時，瀏覽器會"暫停加載"，
+    反而會先執行 script內的程式，執行完後才往下繼續執行，由此可知，在head 中寫script容易
+    導致加載頁面時出現堵塞，因此有時會建議將 script 寫在 body 之後，換言之就是等 整個 DOM
+    加載完畢後再加載。
+    -->
+  <script>
+    let content = document.getElementById("btn");
+    alert(content);
+  </script>
+
+</head>
+<body>
+
+<button id="btn"> 這是按鈕?! </button>
+
+</body>
+<script>
+    let content1 = document.getElementById("btn");
+    content1.innerHTML = "This is useless!!!"; // 此操作更改了 "這是按鈕?!" 為 "This is useless!!!"
+</script>
+
+</html>

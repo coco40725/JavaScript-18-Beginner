@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    #fig:hover{
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<!-- 點擊切換圖片，不斷loop! -->
+
+<figure id="fig">
+  <img id="img" src="./img/1.jpg">
+</figure>
+
+<script>
+  imgContent = document.getElementById("img");
+  figContent = document.getElementById("fig");
+
+  let index = 1;
+  figContent.onclick = function (){
+    if (index > 3) index = 1;
+    let str = "./img/" + index + ".jpg";
+    imgContent.setAttribute("src", str);
+    index ++;
+  };
+</script>
+
+</body>
+</html>
