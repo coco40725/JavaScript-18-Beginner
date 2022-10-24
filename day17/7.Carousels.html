@@ -67,7 +67,6 @@
 
         #navDiv a:hover{
             background-color: rgba(255, 0, 0, 0.9);
-
         }
 
     </style>
@@ -75,21 +74,51 @@
         window.onload = function (){
             const winWidth = 540;
             const imgNumber = 5;
+            let currPosition = 0;
+            let clickActive = true;
             let imgListContent = document.querySelector("#imgList");
             let allA = document.getElementsByTagName("a");
 
-            function MoveImg(curr, target, speed){
-                if (curr < target) speed = -speed;
+            function MoveImg(curr, target){
+                if (curr === target) return;
+
+                let speed = 10;
+                if (curr < target) {
+                    speed = -speed;
+                }
+                console.log("curr: " + curr + "; target: " + target)
+                console.log(speed);
+
 
                 let timer = setInterval(function (){
+                    /*
+                    * 0: offsetLeft = 0
+                    * 1: offsetLeft = -540
+                    * 2: offsetLeft = -540*2
+                    * 3. offsetLeft = -540*3
+                    * 4. offsetLeft = -540*4
+                    * */
+
                     imgListContent.style.left = (imgListContent.offsetLeft + speed) + "px" ;
-                    if ( imgListContent.offsetLeft == -(target * winWidth)){
+                    if ( imgListContent.offsetLeft === -(target * winWidth)){
+                        clickActive = true;
                         clearInterval(timer);
+
                     }
-                }, 30);
+                }, 6);
             }
 
-            // MoveImg(0,2,10);
+
+            for (let i = 0; i < imgNumber; i++){
+                allA[i].onclick = function (){
+                    if (clickActive) {
+                        clickActive = false;
+                        MoveImg(currPosition, i);
+                        currPosition = i;
+                    }
+                }
+            }
+
 
 
 
